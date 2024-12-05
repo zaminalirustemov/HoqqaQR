@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Hoqqa QR</string>
+
+    <!-- QR Code Title -->
+    <string name="qr_code_title">HOQQA</string>
+
+    <!-- Generate QR Code Section -->
+    <string name="generate_qr_code_title">Generate QR code</string>
+    <string name="content_label">Content</string>
+    <string name="optional_settings">Optional settings</string>
+    <string name="clear_settings_label">🗑️Clear settings 🗑️</string>
+    <string name="dot_color_label">◾️Dot Color ◾️</string>
+    <string name="background_color_label">🎨Background Color 🎨</string>
+    <string name="logo_label">🎴Logo 🎴</string>
+
+    <!-- Color Picker Dialog -->
+    <string name="select_color">Select Color</string>
+    <string name="red_label">Red</string>
+    <string name="green_label">Green</string>
+    <string name="blue_label">Blue</string>
+
+    <!-- Save & Share QR Code Dialog -->
+    <string name="save_to_gallery">Save to gallery</string>
+    <string name="share_qr_code">Share QR Code</string>
+
+    <!-- Toast Messages -->
+    <string name="enter_content_toast">Please enter some text or a URL</string>
+    <string name="qr_code_saved_to_gallery">QR Code saved to gallery!</string>
+    <string name="qr_code_save_failed">Failed to save QR Code.</string>
+    <string name="qr_code_share_failed">Failed to share QR Code.</string>
+
+    <string name="close">Close</string>
+    <string name="qr_code">QR Code</string>
+    <string name="share">Share</string>
+
+
+
+    <string name="default_file_name">QR_Code</string>
+    <string name="my_qr_code">My_QR_Code</string>
+
+    <string name="text_cannot_be_empty">Text cannot be empty</string>
+    <string name="qr_code_invalid">QR code is invalid</string>
+</resources>
