@@ -16,6 +16,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import az.lahza.hoqqaqr.R
 
+/**
+ * A composable that displays a header with a title, typically used in the main screen of the app.
+ *
+ * This component aligns the header text to the left, applies a custom font style, and adds some padding below.
+ * The title is read from the string resources.
+ *
+ *
+ * @see stringResource for getting the text from the `R.string.qr_code_title`.
+ * @see FontFamily for custom font handling (using the 'manrope_medium' font).
+ */
 @Composable
 fun Header() {
     // Define the common text style

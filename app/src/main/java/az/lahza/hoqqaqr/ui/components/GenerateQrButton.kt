@@ -14,6 +14,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import az.lahza.hoqqaqr.R
 
+/**
+ * A composable button that triggers the QR code generation process when clicked.
+ *
+ * This button is styled with a rounded corner and has a blue background with white text.
+ * It expands to fill the width of its container and has a fixed height.
+ *
+ * @param modifier Modifier to customize the button's appearance or layout.
+ * @param onClick Lambda function to handle the button's click event, typically for triggering QR code generation.
+ */
 @Composable
 fun GenerateQrButton(
     modifier: Modifier,

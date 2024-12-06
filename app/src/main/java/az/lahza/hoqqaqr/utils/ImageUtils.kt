@@ -18,6 +18,17 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
 
+/**
+ * Saves the provided Bitmap to the device's gallery.
+ *
+ * On API 29 and later, the image is saved to MediaStore and accessed via URI.
+ * On earlier versions, EXTERNAL_CONTENT_URI is used directly.
+ *
+ * @param context The context of the application.
+ * @param bitmap The bitmap image of the QR code to be saved.
+ * @param fileName The name of the file to be saved (optional). If not provided, a default name is used.
+ * @return Returns `true` if the operation was successful, otherwise `false`.
+ */
 fun saveBitmapToGallery(
     context: Context, bitmap: Bitmap, fileName: String = String.empty()
 ): Boolean {
@@ -55,6 +66,15 @@ fun saveBitmapToGallery(
 
 }
 
+/**
+ * Shares the QR code image using an intent.
+ *
+ * The QR code bitmap is saved to a temporary file, and its URI is retrieved using FileProvider.
+ * This URI is then shared via an intent, allowing the user to share the image.
+ *
+ * @param qrBitmap The bitmap image of the QR code to be shared.
+ * @param context The context of the application.
+ */
 fun shareQrCode(qrBitmap: Bitmap?, context: Context) {
 
     if (qrBitmap == null) {

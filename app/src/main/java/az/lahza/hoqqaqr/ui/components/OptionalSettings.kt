@@ -17,6 +17,29 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import az.lahza.hoqqaqr.R
 
+/**
+ * A composable that displays a list of optional settings for the user to modify.
+ *
+ * The component shows a title ("Optional Settings") and then dynamically displays a list of options,
+ * including dot color, background color, logo, and a clear settings option. The visibility of the
+ * options changes based on whether a setting has been modified.
+ *
+ * - The `Clear Settings` option is always visible if the user has made changes.
+ * - The other options are only visible if the settings have been modified or when the list is first shown.
+ *
+ * The settings are presented as buttons, which trigger a callback when clicked.
+ * The callback provides the specific setting that was selected or cleared.
+ *
+ * @param isSettingsChanged Boolean flag to track if any settings have been modified.
+ * @param selectedSetting The currently selected setting, or `null` if no setting is selected.
+ * @param onClearClick A callback function that is triggered when a setting is selected, passing the
+ *                     setting name as a string.
+ *
+ * @see SettingButton for how the individual buttons are displayed.
+ *
+ * @note The `onClearClick` callback accepts a `String` representing the setting name for flexibility
+ *       and to handle different settings dynamically.
+ */
 @Composable
 fun OptionalSettings(
     isSettingsChanged: Boolean,

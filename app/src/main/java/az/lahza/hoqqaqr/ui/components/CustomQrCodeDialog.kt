@@ -26,6 +26,20 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import az.lahza.hoqqaqr.R
 
+/**
+ * A composable function that displays a dialog containing a generated QR code,
+ * with options to save the QR code to the gallery or share it.
+ *
+ * The dialog includes:
+ * - A close button to dismiss the dialog.
+ * - A title ("QR Code") displayed above the QR code.
+ * - The QR code image, which is provided as a [Bitmap].
+ * - Action buttons that allow saving the QR code to the gallery or sharing it.
+ *
+ * @param qrBitmap The generated QR code image as a [Bitmap] to be displayed in the dialog.
+ * @param onDismiss Lambda function that is triggered when the dialog is dismissed.
+ * @param onSaveToGallery Lambda function that is triggered when the "Save to Gallery" button is clicked.
+ */
 @Composable
 fun CustomQrCodeDialog(
     qrBitmap: Bitmap?,
