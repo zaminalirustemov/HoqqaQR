@@ -27,6 +27,23 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import az.lahza.hoqqaqr.R
 
+/**
+ * A customizable color picker dialog that allows users to select a color by adjusting
+ * RGB (Red, Green, Blue) sliders. The selected color is dynamically displayed in the UI,
+ * and the user can confirm their selection by clicking a button.
+ *
+ * The dialog appears as an overlay and allows for dismissing by tapping outside of it.
+ * Once the user selects a color, the selected color is returned through the `onColorSelected` callback.
+ *
+ * This composable provides a simple and intuitive way to pick a color using a slider-based UI.
+ *
+ * @param initialColor The initial color displayed in the dialog. It determines the starting
+ *                     values for the RGB sliders.
+ * @param onDismiss A callback that is invoked when the dialog is dismissed (either by pressing
+ *                  the close button or tapping outside).
+ * @param onColorSelected A callback that is invoked when the user confirms their color selection.
+ *                        The selected color is passed as a parameter.
+ */
 @Composable
 fun ColorPickerDialog(
     initialColor: Color,

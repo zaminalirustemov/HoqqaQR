@@ -20,6 +20,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import az.lahza.hoqqaqr.R
 
+/**
+ * A composable function that renders a labeled text input field for content entry.
+ * The field is accompanied by a title and label, providing a structured UI for text input.
+ *
+ * This composable is designed to create a clean and intuitive content input area
+ * with customizable text. It includes a title, label, and a large editable text field
+ * with a rounded border. Ideal for cases where user input is needed for generating content,
+ * such as QR codes.
+ *
+ * @param content The current value of the input field.
+ * @param onValueChange Lambda function that is called when the input field value changes.
+ *                     It updates the parent state with the new content.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContentInputField(content: String, onValueChange: (String) -> Unit) {

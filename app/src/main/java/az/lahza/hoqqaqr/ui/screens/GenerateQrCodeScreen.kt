@@ -36,6 +36,43 @@ import az.lahza.hoqqaqr.ui.components.OptionalSettings
 import az.lahza.hoqqaqr.ui.components.QrCodeDialog
 import az.lahza.hoqqaqr.utils.generateQRCode
 
+/**
+ * A composable screen for generating QR codes with customizable options, such as dot color,
+ * background color, and logo inclusion.
+ *
+ * This screen provides an input field for content, options for customizing the QR code's appearance,
+ * and a button for generating the QR code. The screen also includes color pickers for customizing the
+ * dot and background colors, and an option to add a logo. Once the QR code is generated, it can be
+ * previewed in a dialog and saved to the gallery.
+ *
+ * ### Features:
+ * - Allows users to input content for the QR code.
+ * - Provides customizable options to adjust dot color, background color, and logo.
+ * - Displays a preview of the generated QR code in a dialog.
+ * - Saves the generated QR code to the gallery.
+ *
+ * ### State Management:
+ * The screen maintains various state variables to track the content, colors, logo, and QR code state:
+ * - `content`: The input text for generating the QR code.
+ * - `dotColor`: The color of the QR code's dots.
+ * - `backgroundColor`: The background color of the QR code.
+ * - `logoBitmap`: The optional logo image to be included in the QR code.
+ * - `selectedSetting`: Tracks the currently selected setting for customization.
+ * - `isSettingsChanged`: Boolean indicating whether the settings have been modified.
+ * - `showQrCodeDialog`: Controls the visibility of the QR code preview dialog.
+ * - `bitmap`: Holds the generated QR code bitmap.
+ * - `isClearSettingsClicked`: Boolean indicating if the settings have been reset.
+ *
+ * ### Color Pickers:
+ * - Provides separate dialogs for selecting dot color and background color using `ColorPickerDialogs`.
+ *
+ * ### Usage:
+ * ```kotlin
+ * GenerateQrCodeScreen(innerPadding = PaddingValues())
+ * ```
+ *
+ * @param innerPadding Padding values for the inner content of the screen.
+ */
 @Composable
 fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
     val focusManager = LocalFocusManager.current

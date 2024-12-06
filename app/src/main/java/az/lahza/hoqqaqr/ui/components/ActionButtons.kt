@@ -19,6 +19,18 @@ import androidx.compose.ui.unit.dp
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.utils.shareQrCode
 
+/**
+ * Displays a row of action buttons for saving and sharing a QR code.
+ *
+ * This composable displays two buttons side by side:
+ * - **Save to Gallery**: Triggers the provided `onSaveToGallery` lambda when clicked. It allows the user to save the generated QR code to the device's gallery.
+ * - **Share**: Initiates the sharing functionality for the QR code bitmap by invoking the `shareQrCode` function. The share button is clickable if the `qrBitmap` is non-null.
+ *
+ * The layout ensures that the buttons are properly spaced, with the "Save to Gallery" button taking more width compared to the "Share" button.
+ *
+ * @param onSaveToGallery A lambda function to be invoked when the "Save to Gallery" button is clicked. This function handles saving the QR code to the device's gallery.
+ * @param qrBitmap The bitmap representation of the QR code that is shared when the "Share" button is clicked. The `qrBitmap` should not be null for the sharing action to be triggered.
+ */
 @Composable
 fun ActionButtons(
     onSaveToGallery: () -> Unit,
