@@ -1,7 +1,6 @@
 package az.lahza.hoqqaqr.ui.theme
 
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 object Dimens {
     val ExtraSmall = 1.dp
