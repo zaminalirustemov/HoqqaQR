@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A composable button component for displaying a selectable setting option.
@@ -59,12 +59,12 @@ fun SettingButton(
                 onClearClick(setting)
             },
             border = if (selectedSetting == setting) {
-                BorderStroke(2.dp, Color.Gray)
-            } else BorderStroke(1.dp, Color.LightGray),
-            shape = RoundedCornerShape(12.dp)
+                BorderStroke(Dimens.Small, Color.Gray)
+            } else BorderStroke(Dimens.ExtraSmall, Color.LightGray),
+            shape = RoundedCornerShape(Dimens.ExtraLarge)
         ) {
             Text(
-                modifier = Modifier.padding(vertical = 8.dp),
+                modifier = Modifier.padding(vertical = Dimens.MediumLarge),
                 text = setting,
                 color = Color.Black,
                 fontFamily = FontFamily(Font(R.font.manrope_medium))

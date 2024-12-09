@@ -22,10 +22,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A customizable color picker dialog that allows users to select a color by adjusting
@@ -54,18 +53,18 @@ fun ColorPickerDialog(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
-                .background(Color.White, shape = RoundedCornerShape(12.dp))
+                .padding(Dimens._16DP)
+                .background(Color.White, shape = RoundedCornerShape(Dimens.ExtraLarge))
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(Dimens._16DP),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
                     text = stringResource(id = R.string.select_color),
-                    fontSize = 18.sp,
+                    fontSize = Dimens._18SP,
                     fontFamily = FontFamily(Font(R.font.manrope_bold)),
-                    modifier = Modifier.padding(bottom = 16.dp)
+                    modifier = Modifier.padding(bottom = Dimens._16DP)
                 )
                 val red = remember { mutableFloatStateOf(initialColor.red) }
                 val green = remember { mutableFloatStateOf(initialColor.green) }
@@ -95,25 +94,25 @@ fun ColorPickerDialog(
                     label = stringResource(id = R.string.blue_label)
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(Dimens._16DP))
 
                 val selectedColor = Color(red.floatValue, green.floatValue, blue.floatValue)
 
                 Box(
                     modifier = Modifier
-                        .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
-                        .size(50.dp)
-                        .background(selectedColor, RoundedCornerShape(12.dp))
+                        .border(Dimens.ExtraSmall, Color.Black, RoundedCornerShape(Dimens.ExtraLarge))
+                        .size(Dimens._50DP)
+                        .background(selectedColor, RoundedCornerShape(Dimens.ExtraLarge))
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(Dimens._16DP))
 
                 Button(
                     onClick = {
                         onColorSelected(selectedColor)
                         onDismiss()
                     },
-                    shape = RoundedCornerShape(12.dp),
+                    shape = RoundedCornerShape(Dimens.ExtraLarge),
                     modifier = Modifier.fillMaxWidth(),
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0D7DF2)),
                 ) {

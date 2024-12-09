@@ -16,9 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A composable function that renders a labeled text input field for content entry.
@@ -38,25 +37,25 @@ import az.lahza.hoqqaqr.R
 fun ContentInputField(content: String, onValueChange: (String) -> Unit) {
     // Define common text styles to avoid redundancy
     val titleTextStyle = TextStyle(
-        fontSize = 22.sp,
+        fontSize = Dimens._22SP,
         fontFamily = FontFamily(Font(R.font.manrope_bold))
     )
 
     val labelTextStyle = TextStyle(
-        fontSize = 16.sp,
+        fontSize = Dimens._16SP,
         fontFamily = FontFamily(Font(R.font.manrope_medium))
     )
 
     Column {
         Text(
             text = stringResource(R.string.generate_qr_code_title),
-            modifier = Modifier.padding(bottom = 24.dp),
+            modifier = Modifier.padding(bottom = Dimens._24DP),
             style = titleTextStyle,
         )
 
         Text(
             text = stringResource(R.string.content_label),
-            modifier = Modifier.padding(bottom = 8.dp),
+            modifier = Modifier.padding(bottom = Dimens.MediumLarge),
             style = labelTextStyle,
         )
 
@@ -65,8 +64,8 @@ fun ContentInputField(content: String, onValueChange: (String) -> Unit) {
             onValueChange = onValueChange,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(150.dp),
-            shape = RoundedCornerShape(12.dp),
+                .height(Dimens._150DP),
+            shape = RoundedCornerShape(Dimens.ExtraLarge),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = Color.Gray, unfocusedBorderColor = Color.LightGray
             )

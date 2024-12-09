@@ -7,7 +7,6 @@ import androidx.compose.ui.platform.LocalContext
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.utils.saveBitmapToGallery
 
-
 /**
  * Displays a dialog with the generated QR code, and provides functionality to save the QR code to the device gallery.
  *
