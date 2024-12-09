@@ -21,10 +21,9 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A composable function that displays a dialog containing a generated QR code,
@@ -50,11 +49,11 @@ fun CustomQrCodeDialog(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
-                .background(Color.White, shape = RoundedCornerShape(12.dp))
+                .padding(Dimens._16DP)
+                .background(Color.White, shape = RoundedCornerShape(Dimens.ExtraLarge))
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(Dimens._16DP),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Box(
@@ -70,7 +69,7 @@ fun CustomQrCodeDialog(
 
                     Text(
                         text = stringResource(id = R.string.qr_code),
-                        fontSize = 18.sp,
+                        fontSize = Dimens._18SP,
                         fontFamily = FontFamily(Font(R.font.manrope_bold))
                     )
                 }
@@ -82,11 +81,11 @@ fun CustomQrCodeDialog(
                         modifier = Modifier
                             .fillMaxWidth()
                             .aspectRatio(1f)
-                            .padding(16.dp)
+                            .padding(Dimens._16DP)
                     )
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(Dimens._16DP))
 
                 // Buttons (Save to Gallery and Share)
                 ActionButtons(

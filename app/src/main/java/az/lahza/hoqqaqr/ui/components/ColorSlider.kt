@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.sp
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A composable that displays a slider for adjusting RGB color components,
@@ -32,7 +32,7 @@ fun ColorSlider(
     // Label Text for the Slider
     Text(
         text = "$label: ${(value * 255).toInt()}",
-        fontSize = 14.sp
+        fontSize = Dimens._14SP
     )
 
     // Slider Component for Color Adjustment

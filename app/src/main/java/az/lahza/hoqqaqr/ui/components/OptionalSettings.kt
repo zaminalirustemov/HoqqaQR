@@ -13,9 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A composable that displays a list of optional settings for the user to modify.
@@ -51,15 +50,15 @@ fun OptionalSettings(
         // Title text
         Text(
             text = stringResource(R.string.optional_settings),
-            modifier = Modifier.padding(bottom = 8.dp),
-            fontSize = 18.sp,
+            modifier = Modifier.padding(bottom = Dimens.MediumLarge),
+            fontSize = Dimens._18SP,
             fontFamily = FontFamily(Font(R.font.manrope_bold))
         )
 
         // Options list
         Column(
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(Dimens.ExtraLarge),
         ) {
             listOf(
                 stringResource(R.string.dot_color_label),
