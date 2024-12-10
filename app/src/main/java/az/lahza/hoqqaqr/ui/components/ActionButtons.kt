@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 import az.lahza.hoqqaqr.utils.shareQrCode
 
 /**
@@ -44,7 +44,7 @@ fun ActionButtons(
             onClick = { onSaveToGallery() },
             modifier = Modifier.weight(0.6f),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0D7DF2)),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(Dimens.ExtraLarge)
         ) {
             Text(
                 text = stringResource(id = R.string.save_to_gallery),
@@ -52,14 +52,14 @@ fun ActionButtons(
             )
         }
 
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(Dimens.MediumLarge))
 
         val context = LocalContext.current
         Button(
             onClick = { shareQrCode(qrBitmap, context) },
             modifier = Modifier.weight(0.4f),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF0F2F5)),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(Dimens.ExtraLarge)
         ) {
             Text(text = stringResource(id = R.string.share), color = Color.Black)
         }

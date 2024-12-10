@@ -12,9 +12,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Dimens
 
 /**
  * A composable that displays a header with a title, typically used in the main screen of the app.
@@ -30,14 +29,14 @@ import az.lahza.hoqqaqr.R
 fun Header() {
     // Define the common text style
     val headerTextStyle = TextStyle(
-        fontSize = 22.sp,
+        fontSize = Dimens._22SP,
         fontFamily = FontFamily(Font(R.font.manrope_medium))
     )
 
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 16.dp),
+            .padding(bottom = Dimens._16DP),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {

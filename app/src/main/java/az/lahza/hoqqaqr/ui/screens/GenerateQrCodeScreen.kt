@@ -24,7 +24,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.unit.dp
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.constants.MimeTypes
 import az.lahza.hoqqaqr.extensions.empty
@@ -34,6 +33,7 @@ import az.lahza.hoqqaqr.ui.components.GenerateQrButton
 import az.lahza.hoqqaqr.ui.components.Header
 import az.lahza.hoqqaqr.ui.components.OptionalSettings
 import az.lahza.hoqqaqr.ui.components.QrCodeDialog
+import az.lahza.hoqqaqr.ui.theme.Dimens
 import az.lahza.hoqqaqr.utils.generateQRCode
 
 /**
@@ -114,11 +114,11 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(Dimens._16DP)
         ) {
             Header()
             ContentInputField(content, onValueChange = { content = it })
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Dimens._20DP))
             OptionalSettings(
                 isSettingsChanged = isSettingsChanged,
                 selectedSetting = selectedSetting,
@@ -151,7 +151,7 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
 
         GenerateQrButton(
             modifier = Modifier
-                .padding(horizontal = 16.dp, vertical = 32.dp)
+                .padding(horizontal = Dimens._16DP, vertical = Dimens._32DP)
                 .align(Alignment.BottomCenter),
             onClick = {
                 if (content.isEmpty()) {
