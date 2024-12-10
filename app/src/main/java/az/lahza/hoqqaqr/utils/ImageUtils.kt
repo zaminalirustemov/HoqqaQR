@@ -76,7 +76,6 @@ fun saveBitmapToGallery(
  * @param context The context of the application.
  */
 fun shareQrCode(qrBitmap: Bitmap?, context: Context) {
-
     if (qrBitmap == null) {
         Toast.makeText(context, context.getString(R.string.qr_code_invalid), Toast.LENGTH_SHORT)
             .show()
