@@ -57,7 +57,8 @@ Contributions are what make the open-source community such a fantastic place to 
 
 ## License
 
-**COMING SOON**
+This project is licensed under the **[MIT License](https://opensource.org/licenses/MIT)**
+By using this project, you agree to the terms outlined in the license.
 
 
 ## ☕ Support
