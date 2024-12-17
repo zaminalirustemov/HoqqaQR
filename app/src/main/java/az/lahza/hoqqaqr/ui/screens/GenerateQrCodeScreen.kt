@@ -2,7 +2,6 @@ package az.lahza.hoqqaqr.ui.screens
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -33,6 +32,8 @@ import az.lahza.hoqqaqr.ui.components.GenerateQrButton
 import az.lahza.hoqqaqr.ui.components.Header
 import az.lahza.hoqqaqr.ui.components.OptionalSettings
 import az.lahza.hoqqaqr.ui.components.QrCodeDialog
+import az.lahza.hoqqaqr.ui.components.snack.HoqqaSnack
+import az.lahza.hoqqaqr.ui.components.snack.rememberSnackState
 import az.lahza.hoqqaqr.ui.theme.Dimens
 import az.lahza.hoqqaqr.utils.generateQRCode
 
@@ -149,17 +150,24 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
             )
         }
 
+        val success = rememberSnackState()
+
+        HoqqaSnack(state = success)
+
         GenerateQrButton(
             modifier = Modifier
                 .padding(horizontal = Dimens._16DP, vertical = Dimens._32DP)
                 .align(Alignment.BottomCenter),
             onClick = {
                 if (content.isEmpty()) {
-                    Toast.makeText(
-                        context,
-                        context.getString(R.string.enter_content_toast),
-                        Toast.LENGTH_SHORT
-                    ).show()
+
+                    success.addMessage("Salam")
+//
+//                    Toast.makeText(
+//                        context,
+//                        context.getString(R.string.enter_content_toast),
+//                        Toast.LENGTH_SHORT
+//                    ).show()
                 } else {
                     bitmap = generateQRCode(
                         content, dotColor, backgroundColor, logo = logoBitmap
