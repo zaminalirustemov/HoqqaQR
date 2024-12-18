@@ -7,7 +7,6 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
-import android.widget.Toast
 import androidx.core.content.FileProvider
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.constants.AppConstants
@@ -70,15 +69,22 @@ fun saveBitmapToGallery(
  * Shares the QR code image using an intent.
  *
  * The QR code bitmap is saved to a temporary file, and its URI is retrieved using FileProvider.
- * This URI is then shared via an intent, allowing the user to share the image.
+ * This URI is then shared via an intent, allowing the user to share the image. If any errors occur,
+ * such as when the QR code bitmap is null or an exception happens during file handling, the onError
+ * callback is invoked with an appropriate error message.
  *
  * @param qrBitmap The bitmap image of the QR code to be shared.
  * @param context The context of the application.
+ * @param onError A callback function that is invoked when an error occurs. It receives a string
+ *        parameter indicating the error message, which can be used to notify the user of the failure.
  */
-fun shareQrCode(qrBitmap: Bitmap?, context: Context) {
+fun shareQrCode(
+    qrBitmap: Bitmap?,
+    context: Context,
+    onError: (String) -> Unit,
+) {
     if (qrBitmap == null) {
-        Toast.makeText(context, context.getString(R.string.qr_code_invalid), Toast.LENGTH_SHORT)
-            .show()
+        onError.invoke(context.getString(R.string.qr_code_invalid))
         return
     }
 
@@ -106,16 +112,10 @@ fun shareQrCode(qrBitmap: Bitmap?, context: Context) {
 
     } catch (e: IOException) {
         e.printStackTrace()
-        Toast.makeText(
-            context, context.getString(R.string.qr_code_share_failed), Toast.LENGTH_SHORT
-        ).show()
+        onError.invoke(context.getString(R.string.qr_code_share_failed))
     } catch (e: Exception) {
         // Handle any other unexpected exceptions
         e.printStackTrace()
-        Toast.makeText(
-            context,
-            context.getString(R.string.qr_code_share_failed),
-            Toast.LENGTH_SHORT
-        ).show()
+        onError.invoke(context.getString(R.string.qr_code_share_failed))
     }
 }

@@ -106,6 +106,9 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
     isSettingsChanged =
         dotColor != Color.Black || backgroundColor != Color.White || logoBitmap != null
 
+    val errorSnackState = rememberSnackState()
+    val successSnackState = rememberSnackState()
+
     Box(modifier = Modifier
         .fillMaxSize()
         .padding(innerPadding)
@@ -150,9 +153,15 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
             )
         }
 
-        val success = rememberSnackState()
+        HoqqaSnack(
+            state = errorSnackState,
+            containerColor = Color.Red
+        )
 
-        HoqqaSnack(state = success)
+        HoqqaSnack(
+            state = successSnackState,
+            containerColor = Color(0xFF0D7DF2)
+        )
 
         GenerateQrButton(
             modifier = Modifier
@@ -160,14 +169,7 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
                 .align(Alignment.BottomCenter),
             onClick = {
                 if (content.isEmpty()) {
-
-                    success.addMessage("Salam")
-//
-//                    Toast.makeText(
-//                        context,
-//                        context.getString(R.string.enter_content_toast),
-//                        Toast.LENGTH_SHORT
-//                    ).show()
+                    errorSnackState.showSnack(context.getString(R.string.enter_content_toast))
                 } else {
                     bitmap = generateQRCode(
                         content, dotColor, backgroundColor, logo = logoBitmap
@@ -198,6 +200,8 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
     QrCodeDialog(
         bitmap = bitmap,
         showQrCodeDialog = showQrCodeDialog,
-        onDismiss = { showQrCodeDialog = false }
+        onDismiss = { showQrCodeDialog = false },
+        onError = { errorSnackState.showSnack(it) },
+        onSuccess = {successSnackState.showSnack(it)}
     )
 }
