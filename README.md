@@ -74,7 +74,7 @@ By using this project, you agree to the terms outlined in the license.
 
 
 ## Contact
-Your Name - [Zaminali Rustamov](https://www.linkedin.com/in/zaminalirustamov/) - zaminalirustemov@gmail.com
+[Zaminali Rustamov](https://www.linkedin.com/in/zaminalirustamov/) - zaminalirustemov@gmail.com
 
 Project Link: [https://github.com/zaminalirustemov/HoqqaQR](https://github.com/zaminalirustemov/HoqqaQR)
 
