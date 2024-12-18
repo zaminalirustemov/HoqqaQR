@@ -30,11 +30,13 @@ import az.lahza.hoqqaqr.utils.shareQrCode
  *
  * @param onSaveToGallery A lambda function to be invoked when the "Save to Gallery" button is clicked. This function handles saving the QR code to the device's gallery.
  * @param qrBitmap The bitmap representation of the QR code that is shared when the "Share" button is clicked. The `qrBitmap` should not be null for the sharing action to be triggered.
+ * @param onError A callback function that is invoked when an error occurs during the sharing process. It passes an error message as a parameter, which can be used to notify the user of any issues.
  */
 @Composable
 fun ActionButtons(
     onSaveToGallery: () -> Unit,
-    qrBitmap: Bitmap?
+    qrBitmap: Bitmap?,
+    onError: (String) -> Unit
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -56,7 +58,12 @@ fun ActionButtons(
 
         val context = LocalContext.current
         Button(
-            onClick = { shareQrCode(qrBitmap, context) },
+            onClick = {
+                shareQrCode(
+                    qrBitmap,
+                    context,
+                ) { onError.invoke(it) }
+            },
             modifier = Modifier.weight(0.4f),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF0F2F5)),
             shape = RoundedCornerShape(Dimens.ExtraLarge)

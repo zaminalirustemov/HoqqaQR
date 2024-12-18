@@ -40,4 +40,6 @@
 
     <string name="text_cannot_be_empty">Text cannot be empty</string>
     <string name="qr_code_invalid">QR code is invalid</string>
+
+    <string name="no_message_provided">No message provided</string>
 </resources>

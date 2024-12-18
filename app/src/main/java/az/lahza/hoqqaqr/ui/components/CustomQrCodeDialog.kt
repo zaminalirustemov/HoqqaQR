@@ -33,17 +33,21 @@ import az.lahza.hoqqaqr.ui.theme.Dimens
  * - A close button to dismiss the dialog.
  * - A title ("QR Code") displayed above the QR code.
  * - The QR code image, which is provided as a [Bitmap].
- * - Action buttons that allow saving the QR code to the gallery or sharing it.
+ * - Action buttons that allow saving the QR code to the gallery or sharing it, with error handling.
  *
  * @param qrBitmap The generated QR code image as a [Bitmap] to be displayed in the dialog.
- * @param onDismiss Lambda function that is triggered when the dialog is dismissed.
- * @param onSaveToGallery Lambda function that is triggered when the "Save to Gallery" button is clicked.
+ *        This is nullable; if null, appropriate error handling should be triggered.
+ * @param onDismiss A lambda function that is triggered when the dialog is dismissed.
+ * @param onSaveToGallery A lambda function that is triggered when the "Save to Gallery" button is clicked.
+ * @param onError A lambda function that is triggered when an error occurs during the sharing or saving process.
+ *        It passes an error message as a string, which can be used to notify the user of the issue.
  */
 @Composable
 fun CustomQrCodeDialog(
     qrBitmap: Bitmap?,
     onDismiss: () -> Unit,
-    onSaveToGallery: () -> Unit
+    onSaveToGallery: () -> Unit,
+    onError: (String) -> Unit,
 ) {
     Dialog(onDismissRequest = onDismiss) {
         Box(
@@ -90,7 +94,10 @@ fun CustomQrCodeDialog(
                 // Buttons (Save to Gallery and Share)
                 ActionButtons(
                     onSaveToGallery = onSaveToGallery,
-                    qrBitmap = qrBitmap
+                    qrBitmap = qrBitmap,
+                    onError = { message ->
+                        onError.invoke(message)
+                    }
                 )
             }
         }
