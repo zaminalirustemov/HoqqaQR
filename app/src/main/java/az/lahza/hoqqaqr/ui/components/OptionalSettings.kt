@@ -1,5 +1,6 @@
 package az.lahza.hoqqaqr.ui.components
 
+import android.content.Context
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
@@ -9,12 +10,19 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.ui.theme.Dimens
+import kotlinx.coroutines.delay
 
 /**
  * A composable that displays a list of optional settings for the user to modify.
@@ -43,8 +51,22 @@ import az.lahza.hoqqaqr.ui.theme.Dimens
 fun OptionalSettings(
     isSettingsChanged: Boolean,
     selectedSetting: String?,
-    onClearClick: (String) -> Unit  // Callback that now accepts a String parameter
+    onClearClick: (String) -> Unit
 ) {
+    val context = LocalContext.current
+    val settingsList = getSettingsList(context)
+
+    var isButtonEnabled by remember { mutableStateOf(true) }
+    var triggerEffect by remember { mutableStateOf(false) }
+
+    LaunchedEffect(triggerEffect) {
+        if (triggerEffect) {
+            delay(100)  // Simulate a delay for asynchronous operations
+            isButtonEnabled = true  // Re-enable the button after delay
+            triggerEffect = false  // Reset the trigger
+        }
+    }
+
     Column {
 
         // Title text
@@ -60,12 +82,7 @@ fun OptionalSettings(
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(Dimens.ExtraLarge),
         ) {
-            listOf(
-                stringResource(R.string.dot_color_label),
-                stringResource(R.string.background_color_label),
-                stringResource(R.string.logo_label),
-                stringResource(R.string.clear_settings_label)
-            ).forEach { setting ->
+            settingsList.forEach { setting ->
                 val isClearSettings = setting == stringResource(R.string.clear_settings_label)
 
                 AnimatedVisibility(
@@ -76,9 +93,22 @@ fun OptionalSettings(
                     SettingButton(
                         setting = setting,
                         selectedSetting = selectedSetting,
-                    ) { onClearClick(setting) }
+                    ) {
+                        if (isButtonEnabled) {
+                            onClearClick(setting)
+                            isButtonEnabled = false
+                            triggerEffect = true
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+private fun getSettingsList(context: Context) = listOf(
+    context.getString(R.string.dot_color_label),
+    context.getString(R.string.background_color_label),
+    context.getString(R.string.logo_label),
+    context.getString(R.string.clear_settings_label)
+)
