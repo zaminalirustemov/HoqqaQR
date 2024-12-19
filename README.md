@@ -1,4 +1,4 @@
-# Hoqqa QR
+# 📱 Hoqqa QR
 ![kotlin](https://img.shields.io/badge/Platforms-Kotlin_Compatible-lightblue?style=for-the-badge&logo=kotlin) ![kotlin](https://img.shields.io/badge/Language-Kotlin-0095D9?style=for-the-badge&logo=kotlin) ![license](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge)  
 ![Jetpack Compose](https://img.shields.io/badge/Framework-Jetpack_Compose-FF8C00?style=for-the-badge&logo=android) ![android_7](https://img.shields.io/badge/Android-7.0_Nougat-green?style=for-the-badge)  ![min_sdk](https://img.shields.io/badge/minSdk-24-orange?style=for-the-badge)
 
@@ -9,7 +9,7 @@ Hoqqa QR is a customizable QR code generator app for Android, built using Jetpac
 <img width=30% src="./examples/hooqa_qr_demo.gif">
 </p>
 
-## Features
+## 🌟 Features
 
 -   **Customization**: Modify the dot color, background color, and central logo of your QR codes.
 -   **RGB Sliders**: Fine-tune colors with precise control using RGB sliders.
@@ -17,10 +17,10 @@ Hoqqa QR is a customizable QR code generator app for Android, built using Jetpac
 -   **Modern UI**: Built with Jetpack Compose, offering a sleek and modern user interface.
 
 
-## Installation
+## ⬇️ Installation
 To install Hoqqa QR, you can download the app from the Google Play Store or build it directly from the source.  **Coming Soon**
 
-## Prerequisites
+## 🔧 Prerequisites
 
 
 |                |Minimum                          |                         |
@@ -28,7 +28,7 @@ To install Hoqqa QR, you can download the app from the Google Play Store or buil
 |Android SDK - API level  |   `24`   
 
 
-## Usage
+## 🛠 Usage
 
 1.  Launch Hoqqa QR.
 2.  Use the RGB sliders to select your desired colors for the QR code dots and background.
@@ -37,14 +37,14 @@ To install Hoqqa QR, you can download the app from the Google Play Store or buil
 5.  Use the "Save" or "Share" options to export your QR code.
 
 
-## Permissions
+## 🚫 Permissions
 
 Hoqqa QR requires the following permissions:
 
 -   **WRITE_EXTERNAL_STORAGE**: Needed to save QR codes to your device.
 -   **READ_EXTERNAL_STORAGE**: Required for adding custom logos from your device.
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -55,7 +55,7 @@ Contributions are what make the open-source community such a fantastic place to 
 5.  Open a Pull Request
 
 
-## License
+## 📜 License
 
 This project is licensed under the **[MIT License](https://opensource.org/licenses/MIT)**
 By using this project, you agree to the terms outlined in the license.
@@ -73,7 +73,7 @@ By using this project, you agree to the terms outlined in the license.
 </p>
 
 
-## Contact
+## 📬 Contact
 [Zaminali Rustamov](https://www.linkedin.com/in/zaminalirustamov/) - zaminalirustemov@gmail.com
 
 Project Link: [https://github.com/zaminalirustemov/HoqqaQR](https://github.com/zaminalirustemov/HoqqaQR)
