@@ -36,7 +36,6 @@ To install Hoqqa QR, you can download the app from the Google Play Store or buil
 4.  Tap the "Generate" button to create your QR code.
 5.  Use the "Save" or "Share" options to export your QR code.
 
-
 ## 🚫 Permissions
 
 Hoqqa QR requires the following permissions:
