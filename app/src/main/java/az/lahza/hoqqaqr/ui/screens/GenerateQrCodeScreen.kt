@@ -35,6 +35,7 @@ import az.lahza.hoqqaqr.ui.components.QrCodeDialog
 import az.lahza.hoqqaqr.ui.components.snack.HoqqaSnack
 import az.lahza.hoqqaqr.ui.components.snack.rememberSnackState
 import az.lahza.hoqqaqr.ui.theme.Dimens
+import az.lahza.hoqqaqr.ui.theme.MainBlue
 import az.lahza.hoqqaqr.utils.generateQRCode
 
 /**
@@ -160,7 +161,7 @@ fun GenerateQrCodeScreen(innerPadding: PaddingValues) {
 
         HoqqaSnack(
             state = successSnackState,
-            containerColor = Color(0xFF0D7DF2)
+            containerColor = MainBlue
         )
 
         GenerateQrButton(

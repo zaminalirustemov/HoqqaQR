@@ -13,6 +13,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.ui.theme.Dimens
+import az.lahza.hoqqaqr.ui.theme.DisableMainBlue
+import az.lahza.hoqqaqr.ui.theme.MainBlue
 
 /**
  * A composable button that triggers the QR code generation process when clicked.
@@ -38,9 +40,9 @@ fun GenerateQrButton(
                 .fillMaxWidth()
                 .height(Dimens._56DP),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF0D7DF2),
+                containerColor = MainBlue,
                 contentColor = Color.White,
-                disabledContainerColor = Color(0x800D7DF2),
+                disabledContainerColor = DisableMainBlue,
                 disabledContentColor = Color.White
             )
         ) {
