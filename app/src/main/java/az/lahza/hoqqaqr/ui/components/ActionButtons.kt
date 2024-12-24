@@ -16,7 +16,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.ButtonWhite
 import az.lahza.hoqqaqr.ui.theme.Dimens
+import az.lahza.hoqqaqr.ui.theme.MainBlue
 import az.lahza.hoqqaqr.utils.shareQrCode
 
 /**
@@ -45,7 +47,7 @@ fun ActionButtons(
         Button(
             onClick = { onSaveToGallery() },
             modifier = Modifier.weight(0.6f),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0D7DF2)),
+            colors = ButtonDefaults.buttonColors(containerColor = MainBlue),
             shape = RoundedCornerShape(Dimens.ExtraLarge)
         ) {
             Text(
@@ -65,7 +67,7 @@ fun ActionButtons(
                 ) { onError.invoke(it) }
             },
             modifier = Modifier.weight(0.4f),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF0F2F5)),
+            colors = ButtonDefaults.buttonColors(containerColor = ButtonWhite),
             shape = RoundedCornerShape(Dimens.ExtraLarge)
         ) {
             Text(text = stringResource(id = R.string.share), color = Color.Black)

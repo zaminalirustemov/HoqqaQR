@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.Dp
 import az.lahza.hoqqaqr.R
 import az.lahza.hoqqaqr.ui.state.SnackState
 import az.lahza.hoqqaqr.ui.theme.Dimens
+import az.lahza.hoqqaqr.ui.theme.MainBlue
 import kotlinx.coroutines.delay
 
 /**
@@ -54,7 +55,7 @@ import kotlinx.coroutines.delay
 fun HoqqaSnack(
     state: SnackState,
     duration: Long = 3000L,
-    containerColor: Color = Color(0xFF0D7DF2),
+    containerColor: Color = MainBlue,
     contentColor: Color = Color.White,
     verticalPadding: Dp = Dimens.ExtraLarge,
     horizontalPadding: Dp = Dimens.ExtraLarge,

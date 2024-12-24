@@ -24,7 +24,11 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.window.Dialog
 import az.lahza.hoqqaqr.R
+import az.lahza.hoqqaqr.ui.theme.Blue
 import az.lahza.hoqqaqr.ui.theme.Dimens
+import az.lahza.hoqqaqr.ui.theme.Green
+import az.lahza.hoqqaqr.ui.theme.MainBlue
+import az.lahza.hoqqaqr.ui.theme.Red
 
 /**
  * A customizable color picker dialog that allows users to select a color by adjusting
@@ -74,7 +78,7 @@ fun ColorPickerDialog(
                 ColorSlider(
                     value = red.floatValue,
                     onValueChange = { red.floatValue = it },
-                    color = Color(0xFFE10000),
+                    color = Red,
                     label = stringResource(id = R.string.red_label)
                 )
 
@@ -82,7 +86,7 @@ fun ColorPickerDialog(
                 ColorSlider(
                     value = green.floatValue,
                     onValueChange = { green.floatValue = it },
-                    color = Color(0xFF00E100),
+                    color = Green,
                     label = stringResource(id = R.string.green_label)
                 )
 
@@ -90,7 +94,7 @@ fun ColorPickerDialog(
                 ColorSlider(
                     value = blue.floatValue,
                     onValueChange = { blue.floatValue = it },
-                    color = Color(0xFF0000E1),
+                    color = Blue,
                     label = stringResource(id = R.string.blue_label)
                 )
 
@@ -114,7 +118,7 @@ fun ColorPickerDialog(
                     },
                     shape = RoundedCornerShape(Dimens.ExtraLarge),
                     modifier = Modifier.fillMaxWidth(),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0D7DF2)),
+                    colors = ButtonDefaults.buttonColors(containerColor = MainBlue),
                 ) {
                     Text(text = stringResource(id = R.string.select_color), color = Color.White)
                 }
