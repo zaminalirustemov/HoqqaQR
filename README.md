@@ -21,6 +21,7 @@ Hoqqa QR is a customizable QR code generator app for Android, built using Jetpac
 To install Hoqqa QR, you can download the app from the Google Play Store or build it directly from the source.  **Coming Soon**
 
 
+
 ## 🔧 Prerequisites
 
 
