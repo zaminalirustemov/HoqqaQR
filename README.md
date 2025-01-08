@@ -4,11 +4,9 @@
 
 Hoqqa QR is a customizable QR code generator app for Android, built using Jetpack Compose. It enables users to create personalized QR codes by adjusting dot colors, background colors, and adding a central logo. The intuitive design, powered by RGB sliders, makes it easy to customize your QR code to fit any need. Once created, QR codes can be saved directly to the gallery or shared across different platforms.
 
-
 <p align="center">
 <img width=30% src="./examples/hooqa_qr_demo.gif">
 </p>
-
 
 ## 🌟 Features
 
