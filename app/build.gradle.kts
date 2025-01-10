@@ -67,6 +67,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation ("com.google.zxing:core:3.4.1")
-    implementation ("com.journeyapps:zxing-android-embedded:4.2.0")
+    // Zxing
+    implementation (libs.zxing.core)
+    implementation (libs.zxing.android.embedded)
 }
